@@ -38,8 +38,7 @@ This is a project for connecting the Concord 4 alarm system to SmartThings.  You
  20.  Write down the **Client ID** and **Client Secret**
  21.  Open a web browser window in private mode (incognito).  Navigate to this URL into your browser, substituting in the Client Id:
  
-https://graph-xx.api.smartthings.com/oauth/authorize?response_type=code&client_id=YOUR-SMARTAPP-CLIENT-ID&scope=app&redirect_uri=https%3A%2F%2Fgraph-xx.api.smartthings.com%2Foauth%2Fcallback
-
+https://graph.api.smartthings.com/oauth/authorize?response_type=code&client_id=YOUR-SMARTAPP-CLIENT-ID&scope=app&redirect_uri=https%3A%2F%2Fgraph-xx.api.smartthings.com
     If you are prompted to login to SmartThings, go ahead.
     Select you location from the drop down list and the receiver you want to have access to through the REST API
     Click the Authorize button.
@@ -49,7 +48,7 @@ https://graph-xx.api.smartthings.com/oauth/authorize?response_type=code&client_i
 
  22. On the Raspberry Pi (or another Linux box), execute the command (substituting Client Id, Client Secret and the Code from the previous step in):
  
-    curl -k "https://graph-xx.api.smartthings.com/oauth/token?grant_type=authorization_code&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&code=YOUR_CODE&scope=app&redirect_uri=https%3A%2F%2Fgraph.api.smartthings.com%2Foauth%2Fcallback"
+    curl -k "https://graph.api.smartthings.com/oauth/token?grant_type=authorization_code&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&code=YOUR_CODE&scope=app&redirect_uri=https%3A%2F%2Fgraph-xx.api.smartthings.com"
     
  23. The response to this will contain an ID that will be your OAuth **API Token**, record this
  24. Open the Smarthings app on your mobile device. Select 'Marketplace', 'SmartApps', 'My Apps' and then 'Concord 4 Integration'. Select the alarm device (created in step 10) for 'Which?', and then select the correct device type for each zone. For example, contact sensors use virtual contact devices, fire detectors use virtual smoke etc. and install it
